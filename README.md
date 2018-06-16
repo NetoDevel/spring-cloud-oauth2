@@ -102,7 +102,7 @@ Esté usuário já é previamente cadastrado quando starto a aplicação.
       
 #### Observações
   
-* As rotas estão diretos no microserviços porque não consegui ainda fazer o zuul funcionar com oauth2.
+* As rotas estão diretas no microserviços porque não consegui ainda fazer o zuul funcionar com oauth2.
 
 
 
