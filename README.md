@@ -3,7 +3,7 @@
 
 ### Este repositório contém:
 
-* um serviço de configuração único.
+* um serviço de configuração único, [aqui](https://github.com/NetoDevel/config-server)
 * Service Registry com Eureka
 * Zuul Api Gateway (Não está funcionando com oauth2)
 * um serviço de autenticação com oauth2
