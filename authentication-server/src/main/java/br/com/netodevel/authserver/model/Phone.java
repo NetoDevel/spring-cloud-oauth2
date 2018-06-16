@@ -44,13 +44,5 @@ public class Phone {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-
-	public Users getUser() {
-		return user;
-	}
-
-	public void setUser(Users user) {
-		this.user = user;
-	}
 	
 }

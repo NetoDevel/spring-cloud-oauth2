@@ -19,5 +19,12 @@ public class UserService {
 	public User findByEmail(String email) {
 		return userRepository.findByEmail(email);
 	}
+
+	public User findOne(Integer userId) {
+		return userRepository.findOne(userId);
+	}
 	
+	public boolean userAlreadyExits(String email) {
+		return userRepository.findByEmail(email) != null ? true : false;
+	}
 }
