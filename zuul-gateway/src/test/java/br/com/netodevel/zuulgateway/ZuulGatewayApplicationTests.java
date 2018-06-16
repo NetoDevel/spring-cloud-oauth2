@@ -1,4 +1,4 @@
-package br.com.netodevel.apigateway;
+package br.com.netodevel.zuulgateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ApiGatewayApplicationTests {
+public class ZuulGatewayApplicationTests {
 
 	@Test
 	public void contextLoads() {

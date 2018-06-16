@@ -26,7 +26,8 @@ public class CargaInicial  implements ApplicationListener<ContextRefreshedEvent>
         List<Profile> perfis = perfilRepository.findAll();
         
         if(perfis.isEmpty()){
-        	Users users = usuarioRepository.save(new Users("Nataniel", "admin", "123"));
+        	// referência de um curso.
+        	Users users = usuarioRepository.save(new Users("netodevel", "admin", "123"));
         	perfilRepository.save(new Profile("ROLE_ADMIN", users));
         }
     }
