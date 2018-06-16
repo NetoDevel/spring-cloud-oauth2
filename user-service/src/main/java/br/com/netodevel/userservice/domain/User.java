@@ -1,8 +1,9 @@
-package br.com.netodevel.authserver.model;
+package br.com.netodevel.userservice.domain;
 
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,24 +16,23 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
 @Entity
 @Table(name = "users")
-public class Users {
-
+public class User {
+	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+	private Integer id;
 
-    private String name;
-
-    @OneToMany(mappedBy = "user")
-    private List<Profile> profiles;
-
-    private String email;
-    
-    private String password;
-    
-    @Column(name="created_at")
+	private String name;
+	
+	private String email;
+	
+	private String password;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+	private List<Phone> phones;
+	
+	@Column(name="created_at")
 	@Temporal(TemporalType.TIMESTAMP)  
 	private Date createdAt;
 	
@@ -40,23 +40,12 @@ public class Users {
 	@Temporal(TemporalType.TIMESTAMP)  
 	private Date updatedAt;
 
-    public Users() {
-    }
-
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public List<Profile> getProfiles() {
-		return profiles;
-	}
-
-	public void setProfiles(List<Profile> profiles) {
-		this.profiles = profiles;
 	}
 
 	public String getEmail() {
@@ -75,33 +64,16 @@ public class Users {
 		this.password = password;
 	}
 
-    public Users(Users user) {
-        this.name = user.getName();
-        this.email = user.getEmail();
-        this.password = user.getPassword();
-        this.profiles = user.getProfiles();
-    }
-
-    public Users(String name, List<Profile> profile, String email, String password) {
-        this.name = name;
-        this.profiles = profile;
-        this.email = email;
-        this.password = password;
-    }
-
-	public Users(String name, String email, String password) {
-		super();
-		this.name = name;
-		this.email = email;
-		this.password = password;
+	public List<Phone> getPhones() {
+		return phones;
 	}
 
-	public Integer getId() {
-		return id;
+	public void setPhones(List<Phone> phones) {
+		this.phones = phones;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
+	
+	public Date getCreatedAt() {
+		return createdAt;
 	}
 	
 	@PrePersist
@@ -117,5 +89,5 @@ public class Users {
 	public void setUpdatedAt() {
 		this.updatedAt = new Date();
 	}
-
+	
 }

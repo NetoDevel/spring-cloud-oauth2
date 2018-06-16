@@ -22,7 +22,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
          .invalidateHttpSession(true)
          .clearAuthentication(true)
          .and().authorizeRequests()
-         .antMatchers(HttpMethod.GET, "/usuario/**").hasAnyRole("ADMIN")
+         .antMatchers(HttpMethod.GET, "/users/**").hasAnyRole("ADMIN")
          .anyRequest().permitAll();
     }
 
